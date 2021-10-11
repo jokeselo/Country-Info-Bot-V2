@@ -22,11 +22,10 @@ UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
 BOT_OWNER = int(os.environ["BOT_OWNER"])
 DATABASE_URL = os.environ["DATABASE_URL"]
 db = Database(DATABASE_URL, "FnCountryInfoBot")
-broadcast_ids = {}
 
 
 Bot = Client(
-    "Country Info Bot",
+    "Country Info Bot V2",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"],
@@ -56,12 +55,19 @@ Made by @FayasNoushad"""
 ABOUT_TEXT = """--**About Me**-- 😎
 
 🤖 **Name :** [Country Info Bot](https://telegram.me/{})
+
 👨‍💻 **Developer :** [Fayas](https://github.com/FayasNoushad)
+
 📢 **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-👥 **Group :** [Developer Team](https://telegram.me/TheDeveloperTeam
+
+👥 **Group :** [Developer Team](https://telegram.me/TheDeveloperTeam)
+
 🌐 **Source :** [👉 Click here](https://github.com/FayasNoushad/Country-Info-Bot-V2)
+
 📝 **Language :** [Python3](https://python.org)
+
 🧰 **Framework :** [Pyrogram](https://pyrogram.org)
+
 📡 **Server :** [Heroku](https://heroku.com)"""
 
 FORCE_SUBSCRIBE_TEXT = "<code>Sorry Dear You Must Join My Updates Channel for using me 😌😉....</code>"
@@ -289,6 +295,7 @@ async def countryinfo_inline(bot, update):
 
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply, group=4)
 async def broadcast(bot, update):
+	broadcast_ids = {}
 	all_users = await db.get_all_users()
 	broadcast_msg = update.reply_to_message
 	while True:
