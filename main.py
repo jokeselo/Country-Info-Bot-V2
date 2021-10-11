@@ -179,7 +179,7 @@ Timezone : `{country.timezones()}`
     return info, wiki, google
 
 
-@Bot.on_message(filters.private & filters.text)
+@Bot.on_message(filters.private & filters.text & ~filters.command)
 async def countryinfo(bot, update):
     if not await db.is_user_exist(update.from_user.id):
 	    await db.add_user(update.from_user.id)
@@ -293,7 +293,7 @@ async def countryinfo_inline(bot, update):
     )
 
 
-@Bot.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply, group=4)
+@Bot.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply, group=1)
 async def broadcast(bot, update):
 	broadcast_ids = {}
 	all_users = await db.get_all_users()
