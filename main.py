@@ -19,7 +19,7 @@ from database import Database
 
 
 BOT_OWNER = int(os.environ[1613808789])
-DATABASE_URL = os.environ[mongodb+srv://fajis123:<password>@autoiltertest.bdsma.mongodb.net/myFirstDatabase?retryWrites=true&w=majority]
+DATABASE_URL = os.environ[mongodb+srv://fajis123:fajis123@autoiltertest.bdsma.mongodb.net/myFirstDatabase?retryWrites=true&w=majority]
 db = Database(DATABASE_URL, "FnCountryInfoBot")
 
 
