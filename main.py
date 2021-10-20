@@ -18,17 +18,16 @@ from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from database import Database
 
 
-UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
-BOT_OWNER = int(os.environ["BOT_OWNER"])
-DATABASE_URL = os.environ["DATABASE_URL"]
+BOT_OWNER = int(os.environ["1613808789"])
+DATABASE_URL = os.environ["mongodb+srv://fajis123:<password>@autoiltertest.bdsma.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"]
 db = Database(DATABASE_URL, "FnCountryInfoBot")
 
 
 Bot = Client(
     "Country Info Bot V2",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"],
+    bot_token = os.environ["2068547216:AAFEBWX_NyWbjEGxYT3KK5HXSZqXgB9gJhw"],
+    api_id = int(os.environ["2658292"]),
+    api_hash = os.environ["3844e31291e5d5b4f8441f07a6a7b812"],
 )
 
 START_TEXT = """Hello {} 😌
