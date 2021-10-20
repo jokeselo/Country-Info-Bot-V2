@@ -26,8 +26,8 @@ db = Database(DATABASE_URL, "FnCountryInfoBot")
 Bot = Client(
     "Country Info Bot V2",
     bot_token = os.environ[2068547216:AAFEBWX_NyWbjEGxYT3KK5HXSZqXgB9gJhw]
-    api_id = "2658292"
-    api_hash = "3844e31291e5d5b4f8441f07a6a7b812"
+    api_id = 2658292
+    api_hash = 3844e31291e5d5b4f8441f07a6a7b812
 )
 
 START_TEXT = """Hello {} 😌
